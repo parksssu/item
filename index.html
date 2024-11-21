@@ -52,27 +52,29 @@
         </div>
         <div class="add-item-form">
             <input type="text" id="itemNameInput" placeholder="재고 이름">
-            <input type="number" id="maxQuantityInput" placeholder="최대 갯수">
-            <input type="number" id="currentStockInput" placeholder="현재 재고">
+            <input type="number" id="maxQuantityInput" placeholder="최대 갯수" min="0">
+            <input type="number" id="currentStockInput" placeholder="현재 재고" min="0">
             <input type="text" id="otherInfoInput" placeholder="기타 정보">
             <button id="addItemButton">재고 추가</button>
             <button id="resetStockButton">현재 재고 및 기타 정보 초기화</button>
         </div>
         <!-- 재고 목록을 테이블로 변경 -->
-        <table id="inventoryContainer">
-            <thead>
-                <tr>
-                    <th>재고 이름</th>
-                    <th>최대 수량</th>
-                    <th>현재 재고</th>
-                    <th>기타 정보</th>
-                    <th>작업</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 재고 항목들이 여기에 추가됩니다 -->
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table id="inventoryContainer">
+                <thead>
+                    <tr>
+                        <th>이름</th> <!-- 변경된 부분 -->
+                        <th>최대 수량</th>
+                        <th>현재 재고</th>
+                        <th>기타 정보</th>
+                        <th>작업</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 재고 항목들이 여기에 추가됩니다 -->
+                </tbody>
+            </table>
+        </div>
         <div class="navigation-buttons">
             <button id="backToListButton">목록으로 돌아가기</button>
             <button id="goToCTabButton">C 탭으로 이동</button>
@@ -84,18 +86,20 @@
     <div id="contentC" class="content">
         <h2>발주 관리</h2>
         <!-- 발주 목록을 테이블로 변경 -->
-        <table id="orderListContainer">
-            <thead>
-                <tr>
-                    <th>재고 이름</th>
-                    <th>발주 수량</th>
-                    <th>기타 정보</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 발주 항목들이 여기에 추가됩니다 -->
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table id="orderListContainer">
+                <thead>
+                    <tr>
+                        <th>재고 이름</th>
+                        <th>발주 수량</th>
+                        <th>기타 정보</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 발주 항목들이 여기에 추가됩니다 -->
+                </tbody>
+            </table>
+        </div>
         <button id="backToBTabButton">B 탭으로 돌아가기</button>
     </div>
     <!-- C탭 내용 끝 -->
