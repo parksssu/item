@@ -1,0 +1,581 @@
+/* 공통 스타일 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+    background-color: #f5f5f5;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* 모바일에서 줄바꿈을 위해 유지 */
+}
+
+.tabs button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: #6c757d;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 14px;
+}
+
+.tabs button.active {
+    background-color: #007bff;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+.tabs button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.content {
+    display: none;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content.active {
+    display: block;
+}
+
+/* A탭 폼 그룹 스타일 */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* A탭 목록 스타일 */
+#listContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 500px;
+    margin: 15px auto;
+    padding: 0;
+    list-style: none;
+}
+
+#listContainer li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9ecef;
+    padding: 10px 14px;
+    margin: 5px 0;
+    border-radius: 8px;
+}
+
+#listContainer .list-name {
+    color: #007bff; /* 목록 이름 색상 변경 */
+    font-weight: bold;
+    flex: 1;
+    font-size: 14px; /* 글씨 크기 조정 */
+}
+
+#listContainer .button-container {
+    display: flex;
+    gap: 5px;
+}
+
+#listContainer .button-container button {
+    padding: 6px 10px;
+    font-size: 12px; /* 글씨 크기 조정 */
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#listContainer .button-container button:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+#listContainer .delete-button {
+    background-color: #dc3545;
+}
+
+#listContainer .delete-button:hover {
+    background-color: #c82333;
+}
+
+/* B탭 찾기 및 재고 등록 버튼 스타일 */
+.find-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* 버튼 간 간격 조정 */
+    margin-bottom: 10px;
+}
+
+#toggleFindButton,
+#toggleRegisterButton { /* 재고 등록 버튼 스타일 추가 */
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#toggleFindButton:hover,
+#toggleRegisterButton:hover { /* 호버 시 색상 변경 */
+    background-color: #117a8b;
+    transform: translateY(-1px);
+}
+
+/* B탭 검색 및 정렬 그룹 */
+.find-options.hidden {
+    display: none;
+}
+
+.find-options {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* B탭 재고 등록 옵션 컨테이너 */
+.register-options.hidden {
+    display: none;
+}
+
+.register-options {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.add-item-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+}
+
+.add-item-form input {
+    flex: 1 1 45%;
+    padding: 10px 14px;
+    margin: 5px 0;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.add-item-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.add-item-form button {
+    flex: 1 1 48%;
+    padding: 10px 14px;
+    margin: 8px 1%;
+    font-size: 14px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-item-form button:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+/* 현재 재고 및 기타 정보 초기화 버튼 스타일 */
+.reset-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#resetStockButton {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#resetStockButton:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* 테이블 스타일 */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 12px; /* 글씨 크기 조정 */
+}
+
+table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+}
+
+table td {
+    color: #555;
+    word-break: break-word;
+}
+
+/* B탭 작업 버튼 스타일 */
+.button-container {
+    display: flex;
+    gap: 5px;
+}
+
+.button-container button {
+    padding: 6px 10px;
+    font-size: 12px; /* 글씨 크기 조정 */
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-container button:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.button-container .delete-button {
+    background-color: #dc3545;
+}
+
+.button-container .delete-button:hover {
+    background-color: #c82333;
+}
+
+/* C탭 테이블 스타일 */
+#orderListContainer {
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#orderListContainer th, #orderListContainer td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 12px; /* 글씨 크기 조정 */
+}
+
+#orderListContainer th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+}
+
+#orderListContainer td {
+    color: #555;
+    word-break: break-word;
+}
+
+/* 네비게이션 버튼 스타일 */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: 15px auto;
+    gap: 10px;
+}
+
+.navigation-buttons button {
+    flex: 1 1 48%;
+    padding: 10px 14px;
+    font-size: 14px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.navigation-buttons button:hover {
+    background-color: #117a8b;
+    transform: translateY(-1px);
+}
+
+/* 기타 버튼 스타일 */
+#backToListButton,
+#goToCTabButton,
+#backToBTabButton {
+    display: block;
+    margin: 15px auto;
+    width: 90%;
+    font-size: 14px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#backToBTabButton {
+    background-color: #17a2b8;
+}
+
+#backToBTabButton:hover {
+    background-color: #117a8b;
+    transform: translateY(-1px);
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* 반투명 배경 */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 수직 중앙 정렬 */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 15px 0;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.modal-content input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal-content button:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+/* 반응형 디자인 강화 */
+@media (max-width: 768px) {
+    .tabs button {
+        width: 80%;
+    }
+
+    .add-item-form input {
+        flex: 1 1 100%;
+    }
+
+    .add-item-form button {
+        flex: 1 1 100%;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+    .navigation-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    table, #orderListContainer {
+        font-size: 14px;
+    }
+
+    /* 모달 반응형 */
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabs button {
+        width: 100%;
+    }
+
+    .search-sort-group {
+        max-width: 100%;
+    }
+
+    .sort-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-container button {
+        width: 100%;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+    .navigation-buttons button {
+        width: 100%;
+    }
+
+    table, #orderListContainer {
+        font-size: 12px;
+    }
+
+    .form-group input, .search-sort-group input, .add-item-form input {
+        padding: 10px 14px;
+    }
+
+    .form-group button, .add-item-form button, .sort-options button, .navigation-buttons button, #backToListButton, #goToCTabButton, #backToBTabButton {
+        padding: 10px 14px;
+    }
+
+    /* 모달 반응형 */
+    .modal-content {
+        width: 95%;
+        margin: 25% auto;
+    }
+}
