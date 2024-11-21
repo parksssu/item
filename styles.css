@@ -1,7 +1,7 @@
 /* 공통 스타일 */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
+    margin: 10px;
     background-color: #f5f5f5;
 }
 
@@ -13,20 +13,20 @@ h1, h2 {
 .tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     flex-wrap: wrap; /* 모바일에서 줄바꿈을 위해 유지 */
 }
 
 .tabs button {
-    padding: 12px 24px;
-    margin: 5px; /* 여백 조정 */
+    padding: 10px 20px;
+    margin: 5px;
     cursor: pointer;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: #6c757d;
     color: #fff;
     transition: background-color 0.3s, transform 0.2s;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .tabs button.active {
@@ -42,7 +42,7 @@ h1, h2 {
 .content {
     display: none;
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -55,16 +55,16 @@ h1, h2 {
 .form-group {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 가운데 정렬 */
-    max-width: 600px;
+    align-items: center;
+    max-width: 500px;
     margin: 0 auto;
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    font-size: 16px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s;
@@ -77,9 +77,9 @@ h1, h2 {
 
 .form-group button {
     width: 100%;
-    padding: 12px 16px;
-    margin-bottom: 8px;
-    font-size: 16px;
+    padding: 10px 14px;
+    margin-bottom: 5px;
+    font-size: 14px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -97,52 +97,73 @@ h1, h2 {
 #listContainer {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 가운데 정렬 */
-    max-width: 600px;
-    margin: 20px auto;
+    align-items: stretch;
+    max-width: 500px;
+    margin: 15px auto;
     padding: 0;
     list-style: none;
 }
 
 #listContainer li {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9ecef;
+    padding: 10px 14px;
     margin: 5px 0;
-}
-
-#listContainer button {
-    width: 100%;
-    padding: 12px 16px;
-    font-size: 16px;
-    background-color: #f0f0f0;
-    border: 1px solid #6c757d;
     border-radius: 8px;
-    color: #333;
-    cursor: pointer;
-    text-align: left; /* 텍스트 왼쪽 정렬 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 
-#listContainer button:hover {
-    background-color: #e0e0e0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
+#listContainer .list-name {
+    color: #007bff; /* 목록 이름 색상 변경 */
+    font-weight: bold;
+    flex: 1;
+    font-size: 14px; /* 글씨 크기 조정 */
+}
+
+#listContainer .button-container {
+    display: flex;
+    gap: 5px;
+}
+
+#listContainer .button-container button {
+    padding: 6px 10px;
+    font-size: 12px; /* 글씨 크기 조정 */
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#listContainer .button-container button:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+#listContainer .delete-button {
+    background-color: #dc3545;
+}
+
+#listContainer .delete-button:hover {
+    background-color: #c82333;
 }
 
 /* B탭 검색 및 정렬 그룹 */
 .search-sort-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
+    align-items: stretch;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
 }
 
 .search-sort-group input {
     width: 100%;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    font-size: 16px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s;
@@ -156,17 +177,18 @@ h1, h2 {
 .sort-options {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .sort-options label {
-    font-size: 16px;
+    font-size: 14px;
     color: #333;
 }
 
 .sort-options select {
     padding: 8px 12px;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s;
@@ -178,8 +200,8 @@ h1, h2 {
 }
 
 .sort-options button {
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 6px 12px;
+    font-size: 12px;
     background-color: #6c757d;
     color: #fff;
     border: none;
@@ -190,7 +212,7 @@ h1, h2 {
 
 .sort-options button:hover {
     background-color: #5a6268;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 /* B탭 재고 추가 폼 스타일 */
@@ -199,15 +221,15 @@ h1, h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
 }
 
 .add-item-form input {
     flex: 1 1 45%;
-    padding: 12px 16px;
-    margin: 6px 0;
-    font-size: 16px;
+    padding: 10px 14px;
+    margin: 5px 0;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
@@ -221,9 +243,9 @@ h1, h2 {
 
 .add-item-form button {
     flex: 1 1 48%;
-    padding: 12px 16px;
-    margin: 10px 1%;
-    font-size: 16px;
+    padding: 10px 14px;
+    margin: 8px 1%;
+    font-size: 14px;
     background-color: #28a745;
     color: #fff;
     border: none;
@@ -234,7 +256,7 @@ h1, h2 {
 
 .add-item-form button:hover {
     background-color: #218838;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 #resetStockButton {
@@ -246,11 +268,15 @@ h1, h2 {
 }
 
 /* 테이블 스타일 */
+.table-responsive {
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -259,9 +285,10 @@ table {
 
 table th, table td {
     border: 1px solid #ddd;
-    padding: 12px 16px;
+    padding: 8px 12px;
     text-align: left;
     vertical-align: middle;
+    font-size: 12px; /* 글씨 크기 조정 */
 }
 
 table th {
@@ -272,21 +299,18 @@ table th {
 
 table td {
     color: #555;
+    word-break: break-word;
 }
 
-button {
-    font-family: inherit;
-}
-
-/* 버튼 컨테이너 스타일 */
+/* B탭 작업 버튼 스타일 */
 .button-container {
     display: flex;
-    gap: 8px;
+    gap: 5px;
 }
 
 .button-container button {
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: 6px 10px;
+    font-size: 12px; /* 글씨 크기 조정 */
     background-color: #6c757d;
     color: #fff;
     border: none;
@@ -297,7 +321,7 @@ button {
 
 .button-container button:hover {
     background-color: #5a6268;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .button-container .delete-button {
@@ -312,8 +336,8 @@ button {
 #orderListContainer {
     width: 100%;
     border-collapse: collapse;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -322,9 +346,10 @@ button {
 
 #orderListContainer th, #orderListContainer td {
     border: 1px solid #ddd;
-    padding: 12px 16px;
+    padding: 8px 12px;
     text-align: left;
     vertical-align: middle;
+    font-size: 12px; /* 글씨 크기 조정 */
 }
 
 #orderListContainer th {
@@ -342,14 +367,15 @@ button {
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 700px;
+    margin: 15px auto;
+    gap: 10px;
 }
 
 .navigation-buttons button {
-    width: 48%;
-    padding: 12px 16px;
-    font-size: 16px;
+    flex: 1 1 48%;
+    padding: 10px 14px;
+    font-size: 14px;
     background-color: #17a2b8;
     color: #fff;
     border: none;
@@ -360,17 +386,17 @@ button {
 
 .navigation-buttons button:hover {
     background-color: #117a8b;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
-/* 기타 스타일 */
+/* 기타 버튼 스타일 */
 #backToListButton,
 #goToCTabButton,
 #backToBTabButton {
     display: block;
     margin: 15px auto;
     width: 90%;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #28a745;
     color: #fff;
     border: none;
@@ -385,7 +411,7 @@ button {
 
 #backToBTabButton:hover {
     background-color: #117a8b;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 /* 모달 스타일 */
@@ -403,7 +429,7 @@ button {
 
 .modal-content {
     background-color: #fff;
-    margin: 10% auto; /* 수직 중앙 정렬 */
+    margin: 15% auto; /* 수직 중앙 정렬 */
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
@@ -441,7 +467,7 @@ button {
     width: 100%;
     padding: 10px 14px;
     margin: 15px 0;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
@@ -456,7 +482,7 @@ button {
 .modal-content button {
     width: 100%;
     padding: 10px 14px;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #28a745;
     color: #fff;
     border: none;
@@ -467,16 +493,11 @@ button {
 
 .modal-content button:hover {
     background-color: #218838;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 /* 반응형 디자인 강화 */
 @media (max-width: 768px) {
-    .tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .tabs button {
         width: 80%;
     }
@@ -487,6 +508,10 @@ button {
 
     .add-item-form button {
         flex: 1 1 100%;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
     }
 
     .navigation-buttons button {
@@ -516,12 +541,12 @@ button {
 
     .sort-options {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
 
     .button-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
 
     .button-container button {
