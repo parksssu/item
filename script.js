@@ -62,14 +62,9 @@ function initializeApp() {
             const li = document.createElement('li');
             li.classList.add('list-item');
 
-            const listButton = document.createElement('button');
-            listButton.textContent = listName;
-            listButton.addEventListener('click', function() {
-                currentList = listName;
-                document.getElementById('inventoryTitle').textContent = `재고 관리 - ${currentList}`;
-                showTab('B');
-                renderInventory();
-            });
+            const listNameSpan = document.createElement('span');
+            listNameSpan.textContent = listName;
+            listNameSpan.classList.add('list-name'); // 목록 이름에 클래스 추가
 
             const buttonContainer = document.createElement('div');
             buttonContainer.classList.add('button-container');
@@ -112,8 +107,15 @@ function initializeApp() {
             buttonContainer.appendChild(editButton);
             buttonContainer.appendChild(deleteButton);
 
-            li.appendChild(listButton);
+            li.appendChild(listNameSpan);
             li.appendChild(buttonContainer);
+
+            li.addEventListener('click', function() {
+                currentList = listName;
+                document.getElementById('inventoryTitle').textContent = `재고 관리 - ${currentList}`;
+                showTab('B');
+                renderInventory();
+            });
 
             listContainer.appendChild(li);
         });
@@ -269,7 +271,7 @@ function initializeApp() {
         filteredInventory.forEach(function(item, index) {
             const tr = document.createElement('tr');
 
-            // 재고 이름
+            // 이름
             const tdName = document.createElement('td');
             tdName.textContent = item.name;
             tr.appendChild(tdName);
