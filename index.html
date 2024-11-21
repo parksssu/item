@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>재고 관리 시스템</title>
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- 콘텐츠 보안 정책(CSP) 메타 태그 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <!-- 뷰포트 메타 태그 추가 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>재고 관리 시스템</h1>
+    <div class="tabs">
+        <button id="tabA" class="active">A탭: 목록 관리</button>
+        <button id="tabB">B탭: 재고 관리</button>
+        <button id="tabC">C탭: 발주 관리</button>
+    </div>
+
+    <!-- A탭 내용 시작 -->
+    <div id="contentA" class="content active">
+        <h2>목록 관리</h2>
+        <div class="form-group">
+            <input type="text" id="listNameInput" placeholder="목록 이름 입력">
+            <button id="addListButton">목록 추가</button>
+            <button id="saveDataButton">데이터 저장</button>
+            <button id="loadDataButton">데이터 불러오기</button>
+            <!-- 파일 입력 요소 추가 -->
+            <input type="file" id="fileInput" style="display: none;" accept=".json">
+        </div>
+        <ul id="listContainer"></ul>
+    </div>
+    <!-- A탭 내용 끝 -->
+
+    <!-- B탭 내용 시작 -->
+    <div id="contentB" class="content">
+        <h2 id="inventoryTitle">재고 관리</h2>
+        <!-- 찾기 버튼 추가 -->
+        <div class="find-button-container">
+            <button id="toggleFindButton">찾기</button>
+            <button id="toggleRegisterButton">재고 등록</button> <!-- 재고 등록 버튼 추가 -->
+        </div>
+        <!-- 찾기 옵션 컨테이너 (초기 숨김) -->
+        <div class="find-options hidden">
+            <div class="search-sort-group">
+                <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+                <div class="sort-options">
+                    <label for="sortSelect">정렬 기준:</label>
+                    <select id="sortSelect">
+                        <option value="name">이름</option>
+                        <option value="maxQuantity">최대 수량</option>
+                        <option value="currentStock">현재 재고</option>
+                    </select>
+                    <button id="sortAscButton">오름차순</button>
+                    <button id="sortDescButton">내림차순</button>
+                </div>
+            </div>
+        </div>
+        <!-- 재고 등록 옵션 컨테이너 (초기 숨김) -->
+        <div class="register-options hidden">
+            <div class="add-item-form">
+                <input type="text" id="itemNameInput" placeholder="재고 이름">
+                <input type="number" id="maxQuantityInput" placeholder="최대 갯수" min="0">
+                <input type="number" id="currentStockInput" placeholder="현재 재고" min="0">
+                <input type="text" id="otherInfoInput" placeholder="기타 정보">
+                <button id="addItemButton">재고 추가</button>
+                <button id="resetStockButton">현재 재고 및 기타 정보 초기화</button>
+            </div>
+        </div>
+        <!-- 재고 목록을 테이블로 변경 -->
+        <div class="table-responsive">
+            <table id="inventoryContainer">
+                <thead>
+                    <tr>
+                        <th>이름</th> <!-- 변경된 부분 -->
+                        <th>최대 수량</th>
+                        <th>현재 재고</th>
+                        <th>기타 정보</th>
+                        <th>작업</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 재고 항목들이 여기에 추가됩니다 -->
+                </tbody>
+            </table>
+        </div>
+        <div class="navigation-buttons">
+            <button id="backToListButton">목록으로 돌아가기</button>
+            <button id="goToCTabButton">C 탭으로 이동</button>
+        </div>
+    </div>
+    <!-- B탭 내용 끝 -->
+
+    <!-- C탭 내용 시작 -->
+    <div id="contentC" class="content">
+        <h2>발주 관리</h2>
+        <!-- 발주 목록을 테이블로 변경 -->
+        <div class="table-responsive">
+            <table id="orderListContainer">
+                <thead>
+                    <tr>
+                        <th>재고 이름</th>
+                        <th>발주 수량</th>
+                        <th>기타 정보</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 발주 항목들이 여기에 추가됩니다 -->
+                </tbody>
+            </table>
+        </div>
+        <button id="backToBTabButton">B 탭으로 돌아가기</button>
+    </div>
+    <!-- C탭 내용 끝 -->
+
+    <!-- 재고 수정 모달 추가 -->
+    <div id="editStockModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>현재 재고 수정</h2>
+            <input type="number" id="modalCurrentStockInput" placeholder="새로운 현재 재고" min="0">
+            <button id="saveStockButton">저장</button>
+        </div>
+    </div>
+
+    <!-- 메인 스크립트 파일 -->
+    <script src="script.js"></script>
+</body>
+</html>
