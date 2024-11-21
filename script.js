@@ -515,6 +515,18 @@ function initializeApp() {
         }
     });
 
+    // "재고 등록" 버튼 토글 기능 구현
+    document.getElementById('toggleRegisterButton').addEventListener('click', function() {
+        const registerOptions = document.querySelector('.register-options');
+        if (registerOptions.classList.contains('hidden')) {
+            registerOptions.classList.remove('hidden');
+            this.textContent = '숨기기'; // 버튼 텍스트 변경
+        } else {
+            registerOptions.classList.add('hidden');
+            this.textContent = '재고 등록'; // 버튼 텍스트 변경
+        }
+    });
+
     // 페이지 초기 로드 시 A탭 표시
     showTab('A');
     renderList();
