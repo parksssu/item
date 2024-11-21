@@ -39,6 +39,7 @@
         <!-- 찾기 버튼 추가 -->
         <div class="find-button-container">
             <button id="toggleFindButton">찾기</button>
+            <button id="toggleRegisterButton">재고 등록</button> <!-- 재고 등록 버튼 추가 -->
         </div>
         <!-- 찾기 옵션 컨테이너 (초기 숨김) -->
         <div class="find-options hidden">
@@ -56,13 +57,16 @@
                 </div>
             </div>
         </div>
-        <div class="add-item-form">
-            <input type="text" id="itemNameInput" placeholder="재고 이름">
-            <input type="number" id="maxQuantityInput" placeholder="최대 갯수" min="0">
-            <input type="number" id="currentStockInput" placeholder="현재 재고" min="0">
-            <input type="text" id="otherInfoInput" placeholder="기타 정보">
-            <button id="addItemButton">재고 추가</button>
-            <button id="resetStockButton">현재 재고 및 기타 정보 초기화</button>
+        <!-- 재고 등록 옵션 컨테이너 (초기 숨김) -->
+        <div class="register-options hidden">
+            <div class="add-item-form">
+                <input type="text" id="itemNameInput" placeholder="재고 이름">
+                <input type="number" id="maxQuantityInput" placeholder="최대 갯수" min="0">
+                <input type="number" id="currentStockInput" placeholder="현재 재고" min="0">
+                <input type="text" id="otherInfoInput" placeholder="기타 정보">
+                <button id="addItemButton">재고 추가</button>
+                <button id="resetStockButton">현재 재고 및 기타 정보 초기화</button>
+            </div>
         </div>
         <!-- 재고 목록을 테이블로 변경 -->
         <div class="table-responsive">
